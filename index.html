@@ -10,6 +10,18 @@
     <body>
         <img id="plane-image" src="./src/plane.jpg" alt="plane" />
         <h1>Departures</h1>
+        <div class="sort-container">
+            <label for="sort-by">Sort by</label>
+            <select name="sort-by" id="sort-by">
+                <option value="departureDate">Departure date</option>
+                <option value="arrivalDate">Arrival date</option>
+                <option value="name">Name</option>
+                <option value="plane">Plane</option>
+                <option value="origin">Origin</option>
+                <option value="destination">Destination</option>
+                <option value="stops">Stops</option>
+            </select>
+        </div>
         <main>
             <table class="table">
                 <tr class="first-row">

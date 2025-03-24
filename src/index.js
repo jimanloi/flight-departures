@@ -1,5 +1,5 @@
 import data from './data.js';
-import sortFlightsByDate from './utils/sort.js';
+import sortAscending from './utils/sort.js';
 
 const now = new Date('2023-08-05 13:45:00');
 console.log(now);
@@ -7,6 +7,7 @@ console.log(now);
 //DOM
 
 const rows = document.getElementById('rows');
+const optionBox = document.getElementById('sort-by');
 
 //Functions
 
@@ -16,9 +17,9 @@ const createRow = (flight) => {
     row.innerHTML = `
     <td>${flight.name}</td>
     <td>${flight.plane}</td>
-    <td>${flight.departureDate}</td>
+    <td class="departure-date">${flight.departureDate}</td>
     <td>${flight.origin}</td>
-    <td>${flight.arrivalDate}</td>
+    <td class="arrival-date">${flight.arrivalDate}</td>
     <td>${flight.destination}</td>
     <td>${flight.stops}</td>
   `;
@@ -27,7 +28,11 @@ const createRow = (flight) => {
 
 //Handler
 const handleLoad = () => {
-    const sortedFlights = sortFlightsByDate(data.flights);
+    const selected = optionBox.value;
+    const sortedFlights = sortAscending(data.flights, selected);
+
+    rows.innerHTML = '';
+
     sortedFlights.forEach((flight) => {
         const row = createRow(flight);
         rows.appendChild(row);
@@ -37,3 +42,4 @@ const handleLoad = () => {
 //Events
 
 window.addEventListener('load', handleLoad);
+optionBox.addEventListener('click', handleLoad);

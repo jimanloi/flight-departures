@@ -10,17 +10,20 @@
     <body>
         <img id="plane-image" src="./src/plane.jpg" alt="plane" />
         <h1>Departures</h1>
-        <table class="table">
-            <tr>
-                <th>Name</th>
-                <th>Plane</th>
-                <th>Departure Date</th>
-                <th>Origin</th>
-                <th>Arrival Date</th>
-                <th>Destination</th>
-                <th>Stops</th>
-            </tr>
-        </table>
+        <main>
+            <table class="table">
+                <tr class="first-row">
+                    <th>Name</th>
+                    <th>Plane</th>
+                    <th>Departure Date</th>
+                    <th>Origin</th>
+                    <th>Arrival Date</th>
+                    <th>Destination</th>
+                    <th>Stops</th>
+                </tr>
+                <tbody id="rows"></tbody>
+            </table>
+        </main>
         <script type="module" src="./src/index.js"></script>
     </body>
 </html>

@@ -25,10 +25,16 @@ h1 {
     margin: 20px 0;
 }
 
+#sort-by {
+    margin: 20px;
+    padding: 5px;
+}
+
 .table {
     width: 100%;
     margin: 0 auto;
     border-collapse: collapse;
+    background-color: black;
 }
 
 .table th,
@@ -41,4 +47,12 @@ h1 {
 .table th {
     background-color: #444; /* Darker header for contrast */
     color: #fff; /* White text for visibility */
+}
+
+.departure-date {
+    color: rgb(4, 252, 0);
+}
+
+.arrival-date {
+    color: rgb(255, 255, 167);
 }
